@@ -54,7 +54,6 @@ jobs:
       - name: Build project
         run: |
           poetry install 
-          mkdir ./src/proto
           cd ./src/proto
           protoc --python_out=./ --pyi_out=./ -I. config.proto
 
