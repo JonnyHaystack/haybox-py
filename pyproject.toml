@@ -5,7 +5,7 @@ description = "HayBox firmware config protocol Python library"
 authors = ["Jonathan Haylett <jonathan@haylett.dev>"]
 license = "GPL-3.0-only"
 readme = "README.md"
-packages = [{include = "haybox_py"}]
+packages = [{include = "src/haybox"}]
 
 [tool.poetry.dependencies]
 python = "^3.10"
