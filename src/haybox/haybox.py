@@ -3,7 +3,6 @@ from google.protobuf.json_format import MessageToDict, ParseDict
 from serial import Serial
 from serial import SerialException
 from serial.tools import list_ports
-from serial.tools.list_ports_common import ListPortInfo
 
 from .proto import config_pb2
 
@@ -19,22 +18,11 @@ class Controller:
         if not self.serial_port.is_open:
             return None
 
-        # raw_data = []
-        # while True:
-        #     bytes_read = self.serial_port.read(1)
-        #     if len(bytes_read) < 1:
-        #         return None
-        #     byte = bytes_read[0]
-        #     if byte == 0:
-        #         break
-        #     raw_data.append(byte)
-
         raw_data = bytes()
         while not raw_data:
             raw_data = self.serial_port.read_until(b"\x00")
 
         try:
-            # decoded_data = cobs.decode(raw_data)
             decoded_data = cobs.decode(raw_data[:-1])
         except cobs.DecodeError as e:
             print(e)
@@ -118,7 +106,6 @@ class Controller:
             # print("Serializing to wire format...")
             config_encoded = config.SerializeToString()
             # print(len(config_encoded))
-            # raise Exception()
 
             # print(json.dumps(MessageToDict(config), indent=2))
             # print(config_encoded)
