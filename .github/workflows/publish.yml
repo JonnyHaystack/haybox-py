@@ -51,13 +51,13 @@ jobs:
           cd src/proto
           git checkout ${{ env.PROTO_REVISION }}
 
-      - name: Build project
+      - name: Generate code from Protobuf definitions
         run: |
           poetry install 
           cd ./src/proto
           poetry run python -m grpc_tools.protoc --python_out=./ --pyi_out=./ -I. config.proto
 
-      - name: Publish package
-        run: poetry publish
+      - name: Build and publish package
+        run: poetry publish --build
         env:
           POETRY_PYPI_TOKEN_PYPI: ${{ secrets.PYPI_TOKEN }}
