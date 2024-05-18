@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "haybox-py"
+version = "0.1.0"
+description = "HayBox firmware config protocol Python library"
+authors = ["Jonathan Haylett <jonathan@haylett.dev>"]
+license = "GPL-3.0-only"
+readme = "README.md"
+packages = [{include = "haybox_py"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+pyserial = "^3.5"
+cobs = "^1.2.1"
+protobuf = "^5.26.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
