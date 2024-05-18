@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "haybox-py"
+name = "haybox"
 version = "0.1.0"
 description = "HayBox firmware config protocol Python library"
 authors = ["Jonathan Haylett <jonathan@haylett.dev>"]
