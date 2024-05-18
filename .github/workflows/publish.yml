@@ -1,0 +1,64 @@
+name: Build and publish
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  metadata:
+    runs-on: ubuntu-latest
+    name: Parse config metadata
+    outputs:
+      meta_json: ${{ steps.parse_yaml.outputs.metadata }}
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Install yaml2json
+      run: python3 -m pip install remarshal
+
+    - name: Read metadata from yaml file
+      id: parse_yaml
+      run: |
+        echo "metadata=$(yaml2json 'meta.yaml')" >> "$GITHUB_OUTPUT"
+
+  build:
+    runs-on: ubuntu-latest
+    needs: metadata
+    env:
+      PROTO_REPO: ${{ fromJson(needs.metadata.outputs.meta_json).repo }}
+      PROTO_REVISION: ${{ fromJson(needs.metadata.outputs.meta_json).revision }}
+      RELEASE_VERSION: ${{ github.ref_type == 'tag' && github.ref_name || github.sha }}
+
+    steps:
+      - name: Install dependencies
+        run: |
+          sudo apt install protobuf-compiler pipx
+          pipx install poetry
+
+      - name: Check out this repo
+        uses: actions/checkout@v4
+
+      - name: Check out HayBox-proto repo
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ env.PROTO_REPO }}
+          path: src/proto
+          fetch-depth: 0
+      
+      - name: Checkout specific HayBox-proto revision
+        run: |
+          cd src/proto
+          git checkout ${{ env.PROTO_REVISION }}
+
+      - name: Build project
+        run: |
+          poetry install 
+          mkdir ./src/proto
+          cd ./src/proto
+          protoc --python_out=./ --pyi_out=./ -I. config.proto
+
+      - name: Publish package
+        run: poetry publish
+        env:
+          POETRY_PYPI_TOKEN_PYPI: ${{ secrets.PYPI_TOKEN }}

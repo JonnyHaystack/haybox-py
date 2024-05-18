@@ -13,7 +13,6 @@ pyserial = "^3.5"
 cobs = "^1.2.1"
 protobuf = "^5.26.1"
 
-
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
