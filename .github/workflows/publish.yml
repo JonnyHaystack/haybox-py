@@ -43,18 +43,18 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: ${{ env.PROTO_REPO }}
-          path: src/proto
+          path: src/haybox/proto
           fetch-depth: 0
       
       - name: Checkout specific HayBox-proto revision
         run: |
-          cd src/proto
+          cd src/haybox/proto
           git checkout ${{ env.PROTO_REVISION }}
 
       - name: Generate code from Protobuf definitions
         run: |
           poetry install 
-          cd ./src/proto
+          cd ./src/haybox/proto
           poetry run python -m grpc_tools.protoc --python_out=./ --pyi_out=./ -I. config.proto
 
       - name: Build and publish package
