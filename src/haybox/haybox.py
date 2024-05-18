@@ -5,7 +5,7 @@ from serial import SerialException
 from serial.tools import list_ports
 from serial.tools.list_ports_common import ListPortInfo
 
-from proto import config_pb2
+from .proto import config_pb2
 
 
 class Controller:
