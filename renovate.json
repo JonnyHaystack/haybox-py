@@ -6,10 +6,11 @@
   "customManagers": [
     {
       "customType": "regex",
-      "fileMatch": ["meta.yaml$"],
+      "fileMatch": ["^meta.yaml$"],
       "matchStrings": [
-        "revision:\\s+(?<currentValue>[^\\s]+)"
+        "revision:\\s+(?<currentDigest>[^\\s]+)"
       ],
+      "currentValueTemplate": "main",
       "depNameTemplate": "HayBox-proto",
       "autoReplaceStringTemplate": "revision: {{{newValue}}}",
       "packageNameTemplate": "https://github.com/JonnyHaystack/HayBox-proto",
