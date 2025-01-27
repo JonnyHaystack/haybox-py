@@ -8,11 +8,11 @@
       "customType": "regex",
       "fileMatch": ["^meta.yaml$"],
       "matchStrings": [
-        "revision:\\s+(?<currentDigest>[^\\s]+)"
+        "revision:\\s+(?<currentDigestShort>[^\\s]+)"
       ],
       "currentValueTemplate": "main",
       "depNameTemplate": "HayBox-proto",
-      "autoReplaceStringTemplate": "revision: {{{newValue}}}",
+      "autoReplaceStringTemplate": "revision: {{{newDigestShort}}}",
       "packageNameTemplate": "https://github.com/JonnyHaystack/HayBox-proto",
       "datasourceTemplate": "git-refs"
     }
