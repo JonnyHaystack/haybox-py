@@ -8,7 +8,7 @@
       "customType": "regex",
       "fileMatch": ["^meta.yaml$"],
       "matchStrings": [
-        "revision:\\s+(?<currentDigestShort>[^\\s]+)"
+        "revision:\\s+(?<currentDigest>[^\\s]+)"
       ],
       "currentValueTemplate": "main",
       "depNameTemplate": "HayBox-proto",
