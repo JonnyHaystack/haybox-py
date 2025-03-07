@@ -11,7 +11,7 @@ packages = [{include = "haybox", from = "src"}]
 python = ">=3.8"
 pyserial = "^3.5"
 cobs = "^1.2.1"
-protobuf = "^5.26.1"
+protobuf = "^6.0.0"
 
 [tool.poetry.group.dev.dependencies]
 grpcio-tools = "^1.63.0"
