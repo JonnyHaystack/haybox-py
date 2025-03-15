@@ -19,5 +19,4 @@ jobs:
           version-path: tool.poetry.version
           skip-tag: true
           skip-ci: true
-          skip-on-empty: false
           output-file: false
