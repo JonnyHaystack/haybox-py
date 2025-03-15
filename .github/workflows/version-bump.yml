@@ -16,4 +16,5 @@ jobs:
           version-file: pyproject.toml
           version-path: tool.poetry.version
           skip-tag: true
+          skip-on-empty: false
           output-file: false
