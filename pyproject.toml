@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "haybox"
-version = "0.1.5"
+version = "0.1.6"
 description = "HayBox firmware config protocol Python library"
 authors = ["Jonathan Haylett <jonathan@haylett.dev>"]
 license = "GPL-3.0-only"
