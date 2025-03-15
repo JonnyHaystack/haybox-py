@@ -8,12 +8,12 @@
       "customType": "regex",
       "fileMatch": ["^meta.yaml$"],
       "matchStrings": [
-        "revision:\\s+(?<currentDigest>[^\\s]+)"
+        "revision:\\s+(?<currentValue>[^\\s]+)"
       ],
       "currentValueTemplate": "main",
       "depNameTemplate": "HayBox-proto",
       "packageNameTemplate": "https://github.com/JonnyHaystack/HayBox-proto",
-      "datasourceTemplate": "git-refs"
+      "datasourceTemplate": "git-tags"
     }
   ]
 }
