@@ -2,20 +2,16 @@
 
 [[package]]
 name = "cobs"
-version = "1.2.1"
+version = "1.2.2"
 description = "Consistent Overhead Byte Stuffing (COBS)"
 optional = false
 python-versions = ">=3.6"
 files = [
-    {file = "cobs-1.2.1-cp310-cp310-win32.whl", hash = "sha256:54f8ea75af41ef17a6aa74089f15060c3413409322fbdd1263e028a91a87bdf0"},
-    {file = "cobs-1.2.1-cp310-cp310-win_amd64.whl", hash = "sha256:e4107c15eefa5f3ce15e5fa3f7fd6d3aa81be839140f35943fb42b8d86e5125e"},
-    {file = "cobs-1.2.1-cp311-cp311-win32.whl", hash = "sha256:f6ab84b1c975e144a83e11c454066e282374e776a1a79eedd06d0151297ae2f3"},
-    {file = "cobs-1.2.1-cp311-cp311-win_amd64.whl", hash = "sha256:046933f36200f4163abd938adcb1500c1a7a394955ce20c9e3ebb79e78eabfdf"},
-    {file = "cobs-1.2.1-cp312-cp312-win32.whl", hash = "sha256:141107fb3b764772f6db6a52af8158457e00e499f75e3794cb67ea11444839c5"},
-    {file = "cobs-1.2.1-cp312-cp312-win_amd64.whl", hash = "sha256:cb02967314f0db41bf04bc475e4963c079912884586003c8290d82cd0f07d621"},
-    {file = "cobs-1.2.1-cp313-cp313-win32.whl", hash = "sha256:5857c85de70f244648d2a5ee1f28e2aa9313752ebd44c8089343c086dd184a77"},
-    {file = "cobs-1.2.1-cp313-cp313-win_amd64.whl", hash = "sha256:3431da8248d91c241ad98ceb08df00824574421132e42359cd31080a1e13bf24"},
-    {file = "cobs-1.2.1.tar.gz", hash = "sha256:2af7f8791cde1ae7c6b936f5d0c35fe29feb10de25f79c15b0af0d6729783cc0"},
+    {file = "cobs-1.2.2-cp312-cp312-win32.whl", hash = "sha256:3afe0cec5d91164f84dcf35b471949aa36285664d21ee984350e39d485707d11"},
+    {file = "cobs-1.2.2-cp312-cp312-win_amd64.whl", hash = "sha256:4da6048f6e16cbd6c8ec5e95e8520e226248ffb8d31e9d6fc5e0888b3b65c54b"},
+    {file = "cobs-1.2.2-cp313-cp313-win32.whl", hash = "sha256:a8fdf6ca70247e7271caea6f2f6f9c0343f5e872e2fd47e21f71831fa9ababa8"},
+    {file = "cobs-1.2.2-cp313-cp313-win_amd64.whl", hash = "sha256:fe3f7194d5fbbc02e8fb03d26ad626a33fa0d420b50d66ed60ac4bf516322d8e"},
+    {file = "cobs-1.2.2.tar.gz", hash = "sha256:dbdd5e32111d72786f83d0c269215dcd6ac629b1ac1962c6878221f3b2ca98da"},
 ]
 
 [[package]]
