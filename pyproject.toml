@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "haybox"
-version = "0.1.6"
+version = "0.1.7"
 description = "HayBox firmware config protocol Python library"
 authors = ["Jonathan Haylett <jonathan@haylett.dev>"]
 license = "GPL-3.0-only"
@@ -11,7 +11,7 @@ packages = [{include = "haybox", from = "src"}]
 python = ">=3.8"
 pyserial = "^3.5"
 cobs = "^1.2.1"
-protobuf = "^5.26.1"
+protobuf = "^7.0.0"
 
 [tool.poetry.group.dev.dependencies]
 grpcio-tools = "^1.63.0"
